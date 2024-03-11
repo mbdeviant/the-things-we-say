@@ -7,5 +7,19 @@
   <body>
     <h1>Express</h1>
     <p>Welcome to your backend.</p>
+    <p>Here's your list</p>
+    <ul>
+      <% messages.forEach(function(message) { %>
+      <li>
+        <strong>User: </strong><%= message.user%>
+        <br />
+        <strong>Message: </strong><%= message.text %>
+        <br />
+        <strong>Date: </strong><%= message.added.toLocaleDateString()%>
+        (<%=message.added.toLocaleTimeString()%>)
+      </li>
+      <br />
+      <% }) %>
+    </ul>
   </body>
 </html>
