@@ -13,7 +13,7 @@ a {
   display: flex;
   flex-direction: column;
   width: fit-content;
-  gap: 14px;
+  gap: 12px;
 }
 .submit-button {
   width: 50%;
