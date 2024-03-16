@@ -5,22 +5,39 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Express</h1>
-    <p>Welcome to your backend.</p>
-    <p>Here's your list</p>
-    <ul>
-      <% messages.forEach(function(message) { %>
-      <li>
-        <strong>User: </strong><%= message.user%>
+    <div class="main-container">
+      <h1>the things we say</h1>
+      <form method="post" action="/">
+        <div class="form-container">
+          <input
+            placeholder="username"
+            type="text"
+            id="username"
+            name="username"
+          />
+          <textarea
+            spellcheck="false"
+            name="message"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <button class="submit-button" type="submit">Post</button>
+        </div>
+      </form>
+      <p>previous posts</p>
+      <ul>
+        <% messages.slice().reverse().forEach(function(message) { %>
+        <li>
+          <strong>User: </strong><%= message.user%>
+          <br />
+          <strong>Message: </strong><%= message.text %>
+          <br />
+          <strong>Date: </strong><%= message.added.toLocaleDateString()%>
+          (<%=message.added.toLocaleTimeString()%>)
+        </li>
         <br />
-        <strong>Message: </strong><%= message.text %>
-        <br />
-        <strong>Date: </strong><%= message.added.toLocaleDateString()%>
-        (<%=message.added.toLocaleTimeString()%>)
-      </li>
-      <br />
-      <% }) %>
-    </ul>
-    <a href="/new">new post</a>
+        <% }) %>
+      </ul>
+    </div>
   </body>
 </html>
