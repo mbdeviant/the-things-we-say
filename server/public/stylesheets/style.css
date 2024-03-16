@@ -11,8 +11,7 @@ body {
   margin: 0 auto;
 }
 .main-container {
-  padding: 14px;
-  width: 100%;
+  padding: 10px 0px 0px 28px;
   height: fit-content;
   display: flex;
   flex-direction: column;
