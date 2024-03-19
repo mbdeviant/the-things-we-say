@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Message = require("./models/message");
 
 const connectDB = async () => {
   try {
@@ -9,4 +10,15 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+const getMessages = async () => {
+  try {
+    const allMessages = await Message.find();
+    console.log("data fetched", allMessages);
+
+    return allMessages;
+  } catch (error) {
+    console.log("failed retrieveing messages", error);
+  }
+};
+
+module.exports = { connectDB, getMessages };
