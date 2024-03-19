@@ -26,17 +26,18 @@
       </form>
       <p>previous posts</p>
       <ul>
-        <% messages.slice().reverse().forEach(function(message) { %>
+        <% if (messages && messages.length) { %> <%
+        messages.slice().reverse().forEach(function(message) { %>
         <li>
-          <strong>User: </strong><%= message.user%>
-          <br />
-          <strong>Message: </strong><%= message.text %>
-          <br />
-          <strong>Date: </strong><%= message.added.toLocaleDateString()%>
-          (<%=message.added.toLocaleTimeString()%>)
+          <strong>User: </strong><%= message.user %><br />
+          <strong>Message: </strong><%= message.text %><br />
+          <strong>Date: </strong><%= message.added.toLocaleDateString() %> (<%=
+          message.added.toLocaleTimeString() %>)
         </li>
         <br />
-        <% }) %>
+        <% }) %> <% } else { %>
+        <li>nothing here</li>
+        <% } %>
       </ul>
     </div>
   </body>
