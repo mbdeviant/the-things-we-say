@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 require("dotenv").config();
-const connectDB = require("./db");
+const { connectDB } = require("./db");
 
 var app = express();
 connectDB();
