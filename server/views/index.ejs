@@ -20,6 +20,7 @@
             name="message"
             cols="30"
             rows="10"
+            required
           ></textarea>
           <button class="submit-button" type="submit">Post</button>
         </div>
@@ -29,10 +30,10 @@
         <% if (messages && messages.length) { %> <%
         messages.slice().reverse().forEach(function(message) { %>
         <li>
-          <strong>User: </strong><%= message.user %><br />
+          <strong>User: </strong><%= message.username %><br />
           <strong>Message: </strong><%= message.text %><br />
-          <strong>Date: </strong><%= message.added.toLocaleDateString() %> (<%=
-          message.added.toLocaleTimeString() %>)
+          <strong>Date: </strong><%= message.date.toLocaleDateString() %> (<%=
+          message.date.toLocaleTimeString() %>)
         </li>
         <br />
         <% }) %> <% } else { %>
