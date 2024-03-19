@@ -13,8 +13,6 @@ const connectDB = async () => {
 const getMessages = async () => {
   try {
     const allMessages = await Message.find();
-    console.log("data fetched", allMessages);
-
     return allMessages;
   } catch (error) {
     console.log("failed retrieveing messages", error);
