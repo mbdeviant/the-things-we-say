@@ -7,7 +7,10 @@ const Message = require("../models/message");
 router.get("/", async function (req, res, next) {
   try {
     const messages = await getMessages();
-    res.render("index", { title: "Express", messages: messages });
+    res.render("index", {
+      title: "Express",
+      messages: messages,
+    });
   } catch (error) {
     console.error(error);
     next(error);
