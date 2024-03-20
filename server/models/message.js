@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const messageSchema = new mongoose.Schema({
-  username: { type: String, default: "Anonymous" },
+  username: { type: String},
   text: { type: String, required: true },
   date: { type: Date, required: true },
 });
