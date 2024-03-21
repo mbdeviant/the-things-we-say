@@ -1,10 +1,29 @@
-function validate() {
-  const username = document.getElementById("username").value.trim();
-  const message = document.getElementById("message").value.trim();
+const username = document.getElementById("username");
+const message = document.getElementById("message");
 
-  if (username == "" || message == "") {
-    alert("Username and message cannot be blank!");
-    return false;
+function validate() {
+  let isValid = true;
+
+  if (username.value.trim() == "") {
+    username.style.borderColor = "red";
+    username.placeholder = "username cannot be empty";
+    username.value = "";
+    isValid = false;
   }
-  return true;
+
+  if (message.value.trim() == "") {
+    message.style.borderColor = "red";
+    message.placeholder = "message cannot be empty";
+    isValid = false;
+  }
+  return isValid;
+}
+
+function usernameInput() {
+  username.style.borderColor = "white";
+  username.placeholder = "username";
+}
+function messageInput() {
+  message.style.borderColor = "white";
+  message.placeholder = "type your message..";
 }
