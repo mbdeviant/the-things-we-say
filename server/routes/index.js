@@ -3,7 +3,6 @@ var router = express.Router();
 const { getMessages } = require("../db");
 const Message = require("../models/message");
 
-/* GET home page. */
 router.get("/", async function (req, res, next) {
   try {
     const messages = await getMessages();
@@ -30,7 +29,6 @@ router.post("/", async function (req, res, next) {
     });
 
     await newMessage.save();
-    //add check for empty username and messages
     res.redirect("/");
   } catch (error) {
     console.log(error);
