@@ -20,10 +20,10 @@ function validate() {
 }
 
 function usernameInput() {
-  username.style.borderColor = "white";
+  username.style.borderColor = "gray";
   username.placeholder = "username";
 }
 function messageInput() {
-  message.style.borderColor = "white";
+  message.style.borderColor = "gray";
   message.placeholder = "type your message..";
 }
