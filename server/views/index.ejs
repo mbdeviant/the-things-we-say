@@ -7,13 +7,14 @@
   <body>
     <div class="main-container">
       <h1>the things we say</h1>
-      <form method="post" action="/" onsubmit="return validate()">
-        <div class="form-container">
+      <div class="form-container">
+        <form method="post" action="/" onsubmit="return validate()">
           <input
             type="text"
             placeholder="username"
             id="username"
             name="username"
+            maxlength="40"
             oninput="usernameInput()"
           />
           <textarea
@@ -23,11 +24,12 @@
             id="message"
             cols="30"
             rows="10"
+            maxlength="280"
             oninput="messageInput()"
           ></textarea>
-          <button class="submit-button" type="submit">Post</button>
-        </div>
-      </form>
+          <button type="submit">Post</button>
+        </form>
+      </div>
       <p>previous posts</p>
       <ul>
         <% if (messages && messages.length) { %> <%
