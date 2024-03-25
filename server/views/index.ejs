@@ -29,26 +29,29 @@
           <button type="submit">Post</button>
         </form>
       </div>
-      <p>Previous Posts</p>
-      <ul>
-        <% if (messages && messages.length) { %> <%
-        messages.slice().reverse().forEach(function(message) { %>
-        <li>
-          <div class="message-header">
-            <strong><%= message.username %></strong>
-            <span class="message-date"
-              ><%= message.date.toLocaleDateString() %> (<%=
-              message.date.toLocaleTimeString() %>)</span
-            >
-          </div>
-          <div class="message-body"><%= message.text %></div>
-        </li>
-        <br />
-        <hr />
-        <% }) %> <% } else { %>
-        <li>nothing here</li>
-        <% } %>
-      </ul>
+      <div class="posts">
+        <p>Previous Posts</p>
+        <ul>
+          <% if (messages && messages.length) { %> <%
+          messages.slice().reverse().forEach(function(message) { %>
+          <li>
+            <div class="message-header">
+              <strong><%= message.username %></strong>
+              <span class="message-date"
+                ><%= message.date.toLocaleDateString() %> (<%=
+                message.date.toLocaleTimeString('en-US', { hour12: false,hour:
+                '2-digit', minute: '2-digit' }) %>)</span
+              >
+            </div>
+            <div class="message-body"><%= message.text %></div>
+          </li>
+          <br />
+          <hr />
+          <% }) %> <% } else { %>
+          <li>nothing here</li>
+          <% } %>
+        </ul>
+      </div>
     </div>
     <script src="../scripts/helper.js"></script>
   </body>
