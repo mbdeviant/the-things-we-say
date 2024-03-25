@@ -65,7 +65,7 @@ button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  align-self: flex-end;
+  align-self: center;
   margin-top: 12px;
 }
 
@@ -85,12 +85,28 @@ textarea:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.2);
 }
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.posts::-webkit-scrollbar {
+  width: 1px;
+}
+.posts::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.posts::-webkit-scrollbar-thumb {
+  background-color: rgba(196, 196, 196, 0.479);
+  outline: 1px solid rgba(92, 92, 92, 0.418);
+}
 
 .message-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-bottom: 7px; */
 }
 
 .message-date {
