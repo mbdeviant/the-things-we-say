@@ -97,6 +97,12 @@ textarea:focus {
   font-size: 0.8em;
 }
 
+.message-body {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 ul {
   display: flex;
   flex-direction: column;
@@ -114,6 +120,7 @@ hr {
   width: 100%;
   border: 0;
   height: 1px;
+  margin-bottom: 10px;
 
   background-image: linear-gradient(
     to right,
