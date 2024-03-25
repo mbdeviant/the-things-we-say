@@ -6,14 +6,14 @@ function validate() {
 
   if (username.value.trim() == "") {
     username.style.borderColor = "red";
-    username.placeholder = "username cannot be empty";
+    username.placeholder = "this field is required";
     username.value = "";
     isValid = false;
   }
 
   if (message.value.trim() == "") {
     message.style.borderColor = "red";
-    message.placeholder = "message cannot be empty";
+    message.placeholder = "this field is required";
     isValid = false;
   }
   return isValid;
