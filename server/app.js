@@ -5,11 +5,19 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var express = require("express");
 var cors = require("cors");
+const helmet = require("helmet");
 const mongoose = require("mongoose");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 require("dotenv").config();
 const { connectDB } = require("./db");
+
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    frameguard: { action: "deny" },
+  })
+);
 
 var app = express();
 connectDB();
