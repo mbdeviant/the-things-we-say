@@ -3,7 +3,7 @@
     "nodemon": "^3.1.0"
   },
   "scripts": {
-    "start": "cd server && npm run monitor "
+    "start": "cd server && npm start "
   },
   "dependencies": {
     "mongoose": "^8.2.2"
