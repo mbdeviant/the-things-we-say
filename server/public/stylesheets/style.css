@@ -114,9 +114,10 @@ textarea:focus {
 
 .message-header {
   display: flex;
+  font-family: monospace;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .message-date {
@@ -124,6 +125,8 @@ textarea:focus {
 }
 
 .message-body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -182,4 +185,30 @@ hr {
   .posts {
     margin-top: 20px;
   }
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  padding-top: 4px;
+  gap: 4px;
+  background-color: transparent;
+  color: white;
+  font-family: monospace;
+  font-style: italic;
+  user-select: none;
+  font-size: 0.7em;
+}
+a {
+  text-decoration: none;
+  color: rgba(128, 128, 128, 0.582);
+}
+footer p {
+  padding: 2px;
+  margin: 0;
 }
