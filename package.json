@@ -4,9 +4,5 @@
   },
   "scripts": {
     "start": "cd server && npm start "
-  },
-  "dependencies": {
-    "helmet": "^7.1.0",
-    "mongoose": "^8.2.2"
   }
 }
