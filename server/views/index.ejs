@@ -13,9 +13,14 @@
   </head>
   <body>
     <div class="main-container">
-      <h1>the things we say</h1>
+      <h1 aria-label="main title">the things we say</h1>
       <div class="form-container">
-        <form method="post" action="/" onsubmit="return validate()">
+        <form
+          aria-label="input form"
+          method="post"
+          action="/"
+          onsubmit="return validate()"
+        >
           <input
             type="text"
             placeholder="Username"
@@ -23,6 +28,7 @@
             name="username"
             maxlength="40"
             oninput="usernameInput()"
+            aria-label="username input"
           />
           <textarea
             placeholder="say something.."
@@ -32,25 +38,30 @@
             rows="5"
             maxlength="280"
             oninput="messageInput()"
+            aria-label="message input"
           ></textarea>
           <button type="submit">Post</button>
         </form>
       </div>
       <div class="posts">
-        <h2>Previous Posts</h2>
-        <ul>
+        <h2 aria-label="previous posts">Previous Posts</h2>
+        <ul aria-label="posts list">
           <% if (messages && messages.length) { %> <%
           messages.slice().reverse().forEach(function(message) { %>
-          <li>
-            <div class="message-header">
-              <strong><%= message.username %></strong>
+          <li aria-label="post list item">
+            <div class="message-header" aria-label="post header">
+              <h3 aria-label="username"><%= message.username %></h3>
               <span class="message-date"
-                ><%= message.date.toLocaleDateString() %> (<%=
-                message.date.toLocaleTimeString('en-US', { hour12: false,hour:
-                '2-digit', minute: '2-digit' }) %>)</span
+                ><p aria-label="post date">
+                  <%= message.date.toLocaleDateString() %> (<%=
+                  message.date.toLocaleTimeString('en-US', { hour12: false,hour:
+                  '2-digit', minute: '2-digit' }) %>)
+                </p></span
               >
             </div>
-            <div class="message-body"><%= message.text %></div>
+            <div class="message-body">
+              <p aria-label="post text"><%= message.text %></p>
+            </div>
           </li>
           <br />
           <hr />
