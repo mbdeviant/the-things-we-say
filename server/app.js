@@ -11,6 +11,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 require("dotenv").config();
 const { connectDB } = require("./db");
+const rateLimit = require("express-rate-limit");
 
 var app = express();
 connectDB();
@@ -21,6 +22,15 @@ app.use(
     frameguard: { action: "deny" },
   })
 );
+
+const limiter = rateLimit({
+  windowMs: 5 * 60 * 1000,
+  max: 50,
+  message:
+    "Too many requests from this IP, please try again after five minutes",
+});
+
+app.use("/", limiter);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
