@@ -12,9 +12,11 @@ var usersRouter = require("./routes/users");
 require("dotenv").config();
 const { connectDB } = require("./db");
 const rateLimit = require("express-rate-limit");
+const job = require("./cron");
 
 var app = express();
 connectDB();
+job.start();
 
 app.use(
   helmet({
