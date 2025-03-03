@@ -7,7 +7,7 @@ router.get("/", async function (req, res, next) {
   try {
     const messages = await getMessages();
     res.render("index", {
-      title: "Express",
+      title: "Posts",
       messages: messages,
     });
   } catch (error) {
