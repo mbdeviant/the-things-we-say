@@ -16,7 +16,7 @@ const job = require("./cron");
 
 var app = express();
 connectDB();
-job.start();
+// job.start();
 
 app.use(
   helmet({
