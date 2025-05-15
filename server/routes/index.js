@@ -16,24 +16,23 @@ router.get("/", async function (req, res, next) {
   }
 });
 
-router.post("/", async function (req, res, next) {
-  try {
-    const username = req.body.username;
-    const message = req.body.message;
-    const date = new Date();
+router.post("/", [
+  body("username").trim().escape(),
+  body("message").trim().escape(),
 
-    const newMessage = new Message({
-      username: username,
-      text: message,
-      date: date,
-    });
+  async function (req, res, next) {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.redirect("/");
+    }
 
-    await newMessage.save();
-    res.redirect("/");
-  } catch (error) {
-    console.log(error);
-    res.redirect("/");
-  }
-});
+    try {
+      const { username, message } = req.body;
+    } catch (error) {
+      console.error(error);
+      res.redirect("/");
+    }
+  },
+]);
 
 module.exports = router;
