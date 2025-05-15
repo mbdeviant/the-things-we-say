@@ -16,7 +16,7 @@ const job = require("./cron");
 
 var app = express();
 connectDB();
-// job.start();
+job.start();
 
 app.use(
   helmet({
@@ -27,7 +27,7 @@ app.use(
 
 const limiter = rateLimit({
   windowMs: 5 * 60 * 1000,
-  max: 110,
+  max: 150,
   message:
     "Too many requests from this IP, please try again after five minutes",
 });
