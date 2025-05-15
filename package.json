@@ -4,5 +4,8 @@
   },
   "scripts": {
     "start": "cd server && npm start "
+  },
+  "dependencies": {
+    "express-validator": "^7.2.1"
   }
 }
