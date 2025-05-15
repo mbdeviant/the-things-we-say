@@ -52,13 +52,12 @@
           <li aria-label="post list item">
             <div class="message-header" aria-label="post header">
               <h3 aria-label="username"><%= message.username %></h3>
-              <span class="message-date"
-                ><p aria-label="post date">
-                  <%= message.date.toLocaleDateString() %> (<%=
-                  message.date.toLocaleTimeString('en-US', { hour12: false,hour:
-                  '2-digit', minute: '2-digit' }) %>)
-                </p></span
+              <span
+                class="message-date"
+                data-time="<%= message.date.toISOString() %>"
               >
+                <p aria-label="post date">loading time...</p>
+              </span>
             </div>
             <div class="message-body">
               <p aria-label="post text"><%= message.text %></p>
