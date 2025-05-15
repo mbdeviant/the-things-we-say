@@ -38,7 +38,7 @@ document.querySelectorAll(".message-date").forEach((el) => {
   const hour = String(date.getHours()).padStart(2, "0");
   const minute = String(date.getMinutes()).padStart(2, "0");
 
-  const formatted = `${day}.${month}.${year} - ${hour}:${minute}`;
+  const formatted = `${day}/${month}/${year}  (${hour}:${minute})`;
 
   el.innerHTML = `<p aria-label="post date">${formatted}</p>`;
 });
