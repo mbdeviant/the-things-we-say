@@ -25,7 +25,7 @@ function usernameInput() {
 }
 function messageInput() {
   message.style.borderColor = "gray";
-  message.placeholder = "type your message..";
+  message.placeholder = "say something..";
 }
 
 document.querySelectorAll(".message-date").forEach((el) => {
