@@ -19,7 +19,16 @@ router.get("/", async function (req, res, next) {
 
 router.post(
   "/",
-  [body("username").trim().escape(), body("message").trim().escape()],
+  [
+    body("username")
+      .trim()
+      .isLength({ max: 16 })
+      .withMessage("Username must be 16 characters or fewer."),
+    body("message")
+      .trim()
+      .isLength({ max: 240 })
+      .withMessage("Message must be 240 characters or fewer."),
+  ],
   async function (req, res, next) {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
