@@ -22,7 +22,7 @@ router.post(
   [
     body("username")
       .trim()
-      .isLength({ max: 16 })
+      .isLength({ max: 40 })
       .withMessage("Username must be 16 characters or fewer."),
     body("message")
       .trim()
