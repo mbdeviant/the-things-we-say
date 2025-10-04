@@ -23,11 +23,11 @@ router.post(
     body("username")
       .trim()
       .isLength({ max: 40 })
-      .withMessage("Username must be 16 characters or fewer."),
+      .withMessage("Username must be 40 characters or fewer."),
     body("message")
       .trim()
-      .isLength({ max: 240 })
-      .withMessage("Message must be 240 characters or fewer."),
+      .isLength({ max: 280 })
+      .withMessage("Message must be 280 characters or fewer."),
   ],
   async function (req, res, next) {
     const errors = validationResult(req);
